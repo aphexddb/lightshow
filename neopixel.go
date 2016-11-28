@@ -38,6 +38,24 @@ const (
 
 	// PWMMaxPulseWidth represents the max period (1000000000ns) supported by pwm. Equals 1 Hz.
 	PWMMaxPulseWidth = 1000000000
+
+	//////////////////////
+
+	PIXELS = 10
+
+	// Badass WS2812 timing hackery from here:
+	// https://wp.josh.com/2014/05/13/ws2812-neopixels-are-not-so-finicky-once-you-get-to-know-them/
+
+	// T1H width of a 1 bit in ns
+	T1H = 900
+	// T1L width of a 1 bit in ns
+	T1L = 600
+	// T0H width of a 0 bit in ns
+	T0H = 400
+	// T0L width of a 0 bit in ns
+	T0L = 900
+	// RES width of the low gap between bits to cause a frame to latch
+	RES = 7000
 )
 
 // TestLoop does things
@@ -53,6 +71,7 @@ func TestLoop(pinName string) {
 	}
 	defer pwm.Close()
 
+	// Just wait long enough to cause the pixels to latch and display the last sent frame
 	if err := pwm.SetDuty(PWMDefaultPeriod / 2); err != nil {
 		panic(err)
 	}
