@@ -11,7 +11,7 @@ var (
 
 // load config on init
 func init() {
-	cfg, cfgErr := LoadConfig("conf.json")
+	cfg, cfgErr := LoadConfig("config.json")
 	if cfgErr != nil {
 		log.Printf("Unable to load config file: %s", cfgErr.Error())
 		os.Exit(1)
