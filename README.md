@@ -11,3 +11,11 @@ Holiday light effects and things
 * [Arduino GECE library](https://github.com/sowbug/G35Arduino)
   * [Related forum thread on using it](http://doityourselfchristmas.com/forums/showthread.php?37502-E1-31-Arduino-GECE-controller)
 * [Another blog post on hacking the GE lights](http://culverlabs.co/post/38529142159/christmaslights)
+
+## Build for Pi
+
+```
+export GOOS=linux
+export GOARCH=arm
+go build *.go
+```
