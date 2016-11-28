@@ -9,6 +9,7 @@ var (
 	config *Configuration
 )
 
+// load config on init
 func init() {
 	cfg, cfgErr := LoadConfig("conf.json")
 	if cfgErr != nil {
@@ -19,10 +20,10 @@ func init() {
 }
 
 func main() {
-	log.Println(config.LedCount)
-	log.Println("Starting")
-	//// const NEO_RGB bits ((0 << 6) | (0 << 4) | (1 << 2) | (2))
+	log.Printf("PWM pin: %v", config.PinPWM)
+
 	x := 0 << 6
 	log.Println(x)
-	// TestLoop("P1_10")
+
+	// TestLoop(PinPWM)
 }
