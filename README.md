@@ -2,7 +2,28 @@
 
 RGB LED light effects and things for the Raspberry Pi.
 
-<img src="images/pi3_gpio.png" />
+Arduino's are tricky for anything fancy regarding services, limited in RAM and plus I wanted to use Golang. Getting PWM to work on a RPI is a challange!
+
+## Hardware
+
+This project uses a Raspberry Pi 3.
+
+<img src="images/pi3_gpio.png" width="480px"/>
+
+## Linux
+
+Use the [Minibian](https://minibianpi.wordpress.com/download/) distro. Setup your SSH access as you prefer, default user is `root` / `raspberry`.
+
+### PWM Support
+
+We need the PWM Linux kernel module, I used [this guide](https://learn.adafruit.com/adafruit-raspberry-pi-lesson-9-controlling-a-dc-motor/the-pwm-kernel-module):
+
+1. Install Hexxeh firmware
+  ```
+  wget https://raw.githubusercontent.com/Hexxeh/rpi-update/master/rpi-update
+  bash rpi-update
+  ```
+2. asd
 
 ## Links
 
