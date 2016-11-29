@@ -1,6 +1,8 @@
 # lightshow
 
-Holiday light effects and things
+RGB LED light effects and things for the Raspberry Pi.
+
+<img src="images/pi3_gpio.png" />
 
 ## Links
 

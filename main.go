@@ -21,9 +21,5 @@ func init() {
 
 func main() {
 	log.Printf("PWM pin: %v", config.PinPWM)
-
-	x := 0 << 6
-	log.Println(x)
-
-	// TestLoop(PinPWM)
+	TestLoop(config.PinPWM)
 }

@@ -41,6 +41,7 @@ const (
 
 	//////////////////////
 
+	// PIXELS is the number of pixels
 	PIXELS = 10
 
 	// Badass WS2812 timing hackery from here:
@@ -61,20 +62,43 @@ const (
 // TestLoop does things
 func TestLoop(pinName string) {
 	log.Printf("GPIO Init")
-	embd.InitGPIO()
-	defer embd.CloseGPIO()
-
-	pwm, err := embd.NewPWMPin(pinName)
-	if err != nil {
-		log.Printf("Unable to init Pin %v: %v", pinName, err.Error())
+	if gpioErr := embd.InitGPIO(); gpioErr != nil {
+		log.Printf("Unable to init GPIO: %v", gpioErr.Error())
 		os.Exit(1)
 	}
-	defer pwm.Close()
+	defer embd.CloseGPIO()
 
-	// Just wait long enough to cause the pixels to latch and display the last sent frame
-	if err := pwm.SetDuty(PWMDefaultPeriod / 2); err != nil {
+	led, err := embd.NewDigitalPin(10)
+	if err != nil {
 		panic(err)
 	}
+	defer led.Close()
+
+	if err := led.SetDirection(embd.Out); err != nil {
+		panic(err)
+	}
+	if err := led.Write(embd.High); err != nil {
+		panic(err)
+	}
+
 	time.Sleep(1 * time.Second)
+
+	if err := led.SetDirection(embd.In); err != nil {
+		panic(err)
+	}
+
+	// pwm, err := embd.NewPWMPin(pinName)
+	// if err != nil {
+	// 	log.Printf("Unable to init Pin %v: %v", pinName, err.Error())
+	// 	os.Exit(1)
+	// }
+	// defer pwm.Close()
+	//
+	// // Just wait long enough to cause the pixels to latch and display the last sent frame
+	// if err := pwm.SetDuty(PWMDefaultPeriod / 2); err != nil {
+	// 	panic(err)
+	// }
+	// log.Println("Sleeping")
+	// time.Sleep(1 * time.Second)
 
 }
