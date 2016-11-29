@@ -1,0 +1,49 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "HmbftipkadrLlCfzzVQ+iFHbl6g=",
+			"path": "github.com/golang/glog",
+			"revision": "23def4e6c14b4da8ac2ed8007337bc5eb5007998",
+			"revisionTime": "2016-01-25T20:49:56Z"
+		},
+		{
+			"checksumSHA1": "8e91+1UKuR2wmFGkzwEPCf+nUYY=",
+			"path": "github.com/kidoman/embd",
+			"revision": "adc3d473054c5f066be48c9459107f70021c34a4",
+			"revisionTime": "2016-09-25T18:48:02Z"
+		},
+		{
+			"checksumSHA1": "2xNK4t3oqq8qTnFtDm3JBQoX+ms=",
+			"path": "github.com/kidoman/embd/host/all",
+			"revision": "adc3d473054c5f066be48c9459107f70021c34a4",
+			"revisionTime": "2016-09-25T18:48:02Z"
+		},
+		{
+			"checksumSHA1": "pG+QrhbhiJ88NJPTloDHZcZTwuY=",
+			"path": "github.com/kidoman/embd/host/bbb",
+			"revision": "adc3d473054c5f066be48c9459107f70021c34a4",
+			"revisionTime": "2016-09-25T18:48:02Z"
+		},
+		{
+			"checksumSHA1": "DgK0M6RDwMYB/ZwyjdUpYuurmZk=",
+			"path": "github.com/kidoman/embd/host/generic",
+			"revision": "adc3d473054c5f066be48c9459107f70021c34a4",
+			"revisionTime": "2016-09-25T18:48:02Z"
+		},
+		{
+			"checksumSHA1": "kc8LfZL+cqLUxUpY+lxAJgxIWZg=",
+			"path": "github.com/kidoman/embd/host/rpi",
+			"revision": "adc3d473054c5f066be48c9459107f70021c34a4",
+			"revisionTime": "2016-09-25T18:48:02Z"
+		},
+		{
+			"checksumSHA1": "9MmrRRey8TQth3KKbv8I3Z/0/2g=",
+			"path": "github.com/kidoman/embd/util",
+			"revision": "adc3d473054c5f066be48c9459107f70021c34a4",
+			"revisionTime": "2016-09-25T18:48:02Z"
+		}
+	],
+	"rootPath": "github.com/aphexddb/lightshow"
+}
