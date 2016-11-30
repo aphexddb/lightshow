@@ -7,7 +7,7 @@ import (
 
 // Configuration contains app configuration
 type Configuration struct {
-	PinPWM string `json:"pin_pwm"`
+	PWMPin int `json:"pwm_pin"`
 }
 
 // LoadConfig loads config from a JSON file

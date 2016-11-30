@@ -2,7 +2,7 @@
 
 RGB LED light effects and things for the Raspberry Pi.
 
-Arduino's are tricky for anything fancy regarding services, limited in RAM and plus I wanted to use Golang. Getting PWM to work on a RPI is a challange!
+Arduino's are tricky for anything fancy regarding services, limited in RAM and plus I wanted to use Golang. Getting PWM to work on a RPI is a challenge! All dependencies are vendored for convenience.
 
 ## Hardware
 
@@ -34,6 +34,15 @@ We need the PWM Linux kernel module, I used [this guide](https://learn.adafruit.
 * [Arduino GECE library](https://github.com/sowbug/G35Arduino)
   * [Related forum thread on using it](http://doityourselfchristmas.com/forums/showthread.php?37502-E1-31-Arduino-GECE-controller)
 * [Another blog post on hacking the GE lights](http://culverlabs.co/post/38529142159/christmaslights)
+
+PWM and GPIO things
+
+* [How to use GPIOs on raspberry pi (Simple I/O, PWM and UART)](https://sites.google.com/site/semilleroadt/raspberry-pi-tutorials/gpio)
+* [Raspberry Pi GPIO via the Shell](https://luketopia.net/2013/07/28/raspberry-pi-gpio-via-the-shell/)
+* [Wiring Pi](http://wiringpi.com/)
+  * [WiringPi-Go: Golang wrapped version](https://github.com/hugozhu/rpi)
+* [pi golang gpio module](https://github.com/stianeikeland/go-rpio/blob/master/rpio.go)
+
 
 ## Build for Pi
 
