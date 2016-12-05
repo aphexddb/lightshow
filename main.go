@@ -1,8 +1,10 @@
-package main
+package main // import "github.com/aphexddb/lightshow"
 
 import (
+	"fmt"
 	"os"
 	"os/signal"
+	"reflect"
 	"syscall"
 
 	log "github.com/Sirupsen/logrus"
@@ -54,10 +56,28 @@ func handleSignals() {
 }
 
 func main() {
-	log.Info("Starting lightshow")
 	handleSignals()
+	go ServeHTTP()
 
-	log.Infof("Using GPIO pin %v for PWM", config.PWMPin)
+	ls := &LightString{
+		Pin:   8,
+		Count: 10,
+	}
+	ls.Init()
+	ls.FillString(2)
+	ls.SetColor(0, 2)
+	ls.SetColor(100, 2)
+	ls.Render()
 
-	FoobarPWM(config.PWMPin)
+	fmt.Printf("ColorWhite: [%v] %v\n", ColorWhite, reflect.TypeOf(ColorWhite))
+	fmt.Printf("ColorRed: [%v] %v\n", ColorRed, reflect.TypeOf(ColorRed))
+	fmt.Printf("ColorGreen: [%v] %v\n", ColorGreen, reflect.TypeOf(ColorGreen))
+	fmt.Printf("ColorBlue: [%v] %v\n", ColorBlue, reflect.TypeOf(ColorBlue))
+	fmt.Printf("ColorHue(RBRed): [%v] %v\n", ColorHue(uint8(RBRed)), reflect.TypeOf(ColorHue(uint8(RBRed))))
+	fmt.Printf("RainbowColor(RBRed): [%v] %v\n", RainbowColor(RBRed), reflect.TypeOf(RainbowColor(RBRed)))
+	fmt.Printf("ChannelMax: [%v] %v\n", ChannelMax, reflect.TypeOf(ChannelMax))
+	fmt.Printf("HueMax: [%v] %v\n", HueMax, reflect.TypeOf(HueMax))
+
+	LedBLinkLoop()
+
 }
