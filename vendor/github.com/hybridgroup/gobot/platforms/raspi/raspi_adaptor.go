@@ -288,6 +288,7 @@ func (r *RaspiAdaptor) ServoWrite(pin string, angle byte) (err error) {
 }
 
 func (r *RaspiAdaptor) piBlaster(data string) (err error) {
+	fmt.Println("opening")
 	fi, err := sysfs.OpenFile("/dev/pi-blaster", os.O_WRONLY|os.O_APPEND, 0644)
 	defer fi.Close()
 

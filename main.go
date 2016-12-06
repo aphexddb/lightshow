@@ -1,11 +1,10 @@
 package main // import "github.com/aphexddb/lightshow"
 
 import (
-	"fmt"
 	"os"
 	"os/signal"
-	"reflect"
 	"syscall"
+	"time"
 
 	log "github.com/Sirupsen/logrus"
 )
@@ -57,27 +56,13 @@ func handleSignals() {
 
 func main() {
 	handleSignals()
-	go ServeHTTP()
+	// go ServeHTTP()
 
-	ls := &LightString{
-		Pin:   8,
-		Count: 10,
+	ls := NewG35String(12, 36)
+	for {
+		ls.FillColor(0, 36, MaxIntensity, ColorGreen)
+		time.Sleep(1000 * time.Millisecond)
+		ls.FillColor(0, 36, MaxIntensity, ColorRed)
+		time.Sleep(1000 * time.Millisecond)
 	}
-	ls.Init()
-	ls.FillString(2)
-	ls.SetColor(0, 2)
-	ls.SetColor(100, 2)
-	ls.Render()
-
-	fmt.Printf("ColorWhite: [%v] %v\n", ColorWhite, reflect.TypeOf(ColorWhite))
-	fmt.Printf("ColorRed: [%v] %v\n", ColorRed, reflect.TypeOf(ColorRed))
-	fmt.Printf("ColorGreen: [%v] %v\n", ColorGreen, reflect.TypeOf(ColorGreen))
-	fmt.Printf("ColorBlue: [%v] %v\n", ColorBlue, reflect.TypeOf(ColorBlue))
-	fmt.Printf("ColorHue(RBRed): [%v] %v\n", ColorHue(uint8(RBRed)), reflect.TypeOf(ColorHue(uint8(RBRed))))
-	fmt.Printf("RainbowColor(RBRed): [%v] %v\n", RainbowColor(RBRed), reflect.TypeOf(RainbowColor(RBRed)))
-	fmt.Printf("ChannelMax: [%v] %v\n", ChannelMax, reflect.TypeOf(ChannelMax))
-	fmt.Printf("HueMax: [%v] %v\n", HueMax, reflect.TypeOf(HueMax))
-
-	LedBLinkLoop()
-
 }
