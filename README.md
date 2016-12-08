@@ -64,6 +64,12 @@ go build
 
 ## Links
 
+To investigate
+
+* [go bindings for Raspberry Pi PWM library for WS281X LEDs](https://github.com/mcuadros/go-rpi-ws281x)
+  * [Userspace Raspberry Pi PWM library for WS281X LEDs](https://github.com/jgarff/rpi_ws281x/tree/27229b24028082b2ef9314c6247f621af296486d)
+
+
 * [Different Styles of Pixels](http://www.doityourselfchristmas.com/wiki/index.php?title=Different_Styles_of_Pixels)
 * [Pixel Wiring Colors](http://www.doityourselfchristmas.com/wiki/index.php?title=Pixel_Wiring_Colors)
 * [GE Color Effects Bulbs](http://www.geholidaylighting.com/color-effects/us/items/72425)
